@@ -41,7 +41,7 @@ Explain what the score means in plain terms.>
 
 _Dark-theme version: [<metric>-history-dark.svg](../../img/<metric>-history-dark.svg)_
 
-**How to read this chart.** <Use the standard wording: one point per reported score, color = source, hollow gray = unverified, step line = best score so far. Then name which sources this metric uses.>
+**How to read this chart.** <Use the standard wording: one point per reported score, color = kind of source (Primary / Independent / Compiled), hollow gray = unverified, step line = best score so far. Then name which organizations fill each role for this metric.>
 
 What stands out:
 - <2–4 bullets, each tied to something visible in the chart.>
@@ -66,11 +66,11 @@ Every metric card uses the same chart, made by `scripts/metric_history.py` from 
 | `date_basis` | `release` (model release date), `evaluated` (release unknown; first independent evaluation date) or `reported` (release unknown; earliest date an aggregator listed the score) |
 | `score` | 0–100 |
 | `setup_detail` | How the test was run (shots, chain-of-thought…). Recorded here, not shown on the chart |
-| `source` | `Primary` (checked by us) · `HELM` (independent, same setup) · `Epoch` (compiled self-reports) · `Unverified` (aggregators, not checked) |
+| `source` | The *kind* of number: `Primary` (checked by us) · `Independent` (one organization re-ran every model the same way, e.g. Stanford HELM or Epoch AI's own runs) · `Compiled` (reported scores collected in one place, e.g. Epoch AI's external runs) · `Unverified` (aggregators, not checked). Who published it goes in `original_source`. |
 | `original_source`, `source_url` | Where the number comes from |
 | `notes` | Anything unusual: outliers, conflicting reports |
 
-**`data/<metric>/chart.json`**: `title`, `y_label`, `y_range`, `x_start`, `as_of`, an optional `ceiling` band, `reference_lines` (random guessing, human baselines), `pairs` (one model with two conflicting scores), and up to ~4 `annotations`. See `data/mmlu/chart.json` for an example.
+**`data/<metric>/chart.json`**: `title`, `y_label`, `y_range`, `x_start`, `as_of`, an optional `ceiling` band, `source_labels` (optional legend text per role, naming the organization), `reference_lines` (random guessing, human baselines), `pairs` (one model with two conflicting scores), and up to ~4 `annotations`. See `data/mmlu/chart.json` for an example.
 
 </details>
 

@@ -1,0 +1,15 @@
+model,date,date_basis,score,setup_detail,source_title,source_url,notes
+GPT-4,2023-03-14,release,38.8,few-shot chain-of-thought,GPQA: A Graduate-Level Google-Proof Q&A Benchmark (Rein et al. 2023),https://arxiv.org/abs/2311.12022,Best baseline in the original paper (Diamond subset)
+gpt-4-1106-preview,2023-11-06,release,42.5,0-shot chain-of-thought (simple-evals),openai/simple-evals README,https://github.com/openai/simple-evals,README does not name the GPQA subset
+Claude 3 Opus,2024-03-04,release,50.4,as reported by Anthropic; listed in simple-evals,openai/simple-evals README,https://github.com/openai/simple-evals,
+gpt-4-turbo-2024-04-09,2024-04-09,release,49.3,0-shot chain-of-thought (simple-evals),openai/simple-evals README,https://github.com/openai/simple-evals,
+gpt-4o-2024-05-13,2024-05-13,release,49.9,0-shot chain-of-thought (simple-evals),openai/simple-evals README,https://github.com/openai/simple-evals,
+Claude 3.5 Sonnet,2024-06-20,release,59.4,as reported by Anthropic; listed in simple-evals,openai/simple-evals README,https://github.com/openai/simple-evals,
+Llama 3.1 405B,2024-07-23,release,50.7,as reported by Meta; listed in simple-evals,openai/simple-evals README,https://github.com/openai/simple-evals,
+o1-preview,2024-09-12,release,73.3,0-shot chain-of-thought (simple-evals),openai/simple-evals README,https://github.com/openai/simple-evals,
+o1,2024-12-05,release,75.7,0-shot chain-of-thought (simple-evals),openai/simple-evals README,https://github.com/openai/simple-evals,
+o3-mini (high),2025-01-31,release,77.2,high reasoning effort (simple-evals),openai/simple-evals README,https://github.com/openai/simple-evals,
+GPT-4.5 (preview),2025-02-27,release,69.5,0-shot chain-of-thought (simple-evals),openai/simple-evals README,https://github.com/openai/simple-evals,
+GPT-4.1,2025-04-14,release,66.3,0-shot chain-of-thought (simple-evals),openai/simple-evals README,https://github.com/openai/simple-evals,
+o3 (high),2025-04-16,release,83.4,high reasoning effort; no tools (simple-evals),openai/simple-evals README,https://github.com/openai/simple-evals,
+o4-mini (high),2025-04-16,release,81.3,high reasoning effort; no tools (simple-evals),openai/simple-evals README,https://github.com/openai/simple-evals,

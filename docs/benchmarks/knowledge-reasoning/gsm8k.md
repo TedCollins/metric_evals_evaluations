@@ -78,8 +78,8 @@ _Dark-theme version: [gsm8k-history-dark.svg](../../img/gsm8k-history-dark.svg)_
 
 **How to read this chart.** Each point is one reported score. **Color shows where the number came from**:
 - **Primary** (blue): taken by hand from the original paper or a model report, and checked by us [1][3][4][5].
-- **HELM** (green): Stanford re-ran every model itself with the *same* setup: 5 worked examples, 1,000 test problems, exact match on the final number [11]. These points are truly comparable with each other.
-- **Epoch AI** (orange): scores from papers and announcements, compiled by Epoch AI's Benchmarking Hub [10]. These are self-reported, and the setups vary.
+- **Independent: Stanford HELM** (green): Stanford re-ran every model itself with the *same* setup: 5 worked examples, 1,000 test problems, exact match on the final number [11]. These points are truly comparable with each other.
+- **Compiled: Epoch AI** (orange): scores from papers and announcements, compiled by Epoch AI's Benchmarking Hub [10]. These are self-reported, and the setups vary.
 - **Unverified** (hollow gray): self-reported scores listed by aggregator sites that we haven't checked against an original source [12][13]. Three 2026 models have no known release date, so they sit at the date an aggregator first listed them (`date_basis = reported` in the data).
 
 The gray step line traces the best score reported so far across all sources and setups.

@@ -82,8 +82,8 @@ _Dark-theme version: [mmlu-history-dark.svg](../../img/mmlu-history-dark.svg)_
 
 **How to read this chart.** Each point is one reported score. **Color shows where the number came from**:
 - **Primary** (blue): taken by hand from the original paper or model report, and checked by us [1][7][12][13].
-- **HELM** (green): Stanford re-ran every model itself with the *same* prompt and setup (5-shot, all 57 subjects) [15]. These points are truly comparable with each other.
-- **Epoch AI** (orange): scores from papers and announcements, compiled by Epoch AI's Benchmarking Hub [14]. These are self-reported, but collected in one place.
+- **Independent: Stanford HELM** (green): Stanford re-ran every model itself with the *same* prompt and setup (5-shot, all 57 subjects) [15]. These points are truly comparable with each other.
+- **Compiled: Epoch AI** (orange): scores from papers and announcements, compiled by Epoch AI's Benchmarking Hub [14]. These are self-reported, but collected in one place.
 - **Unverified** (hollow gray): scores from secondary aggregators that we haven't checked against an original source. Almost all of them are Kaggle "Open Benchmarks" runs, listed on BenchLM [16]. For models released after early 2026, the release date wasn't available, so the point sits at the date Kaggle first evaluated the model (`date_basis = evaluated` in the data).
 
 The gray step line traces the best score reported so far across all sources and test setups, so it makes progress look smoother than a like-for-like comparison would. How each score was measured (number of examples, chain-of-thought) is recorded in the data file but not shown on the chart.

@@ -19,8 +19,8 @@ def main() -> None:
                      "https://crfm.stanford.edu/helm/mmlu/latest/")
     write_scores(METRIC, {
         "Primary": primary,
-        "Epoch": drop_duplicates_of(epoch, primary),
-        "HELM": helm,
+        "Compiled": drop_duplicates_of(epoch, primary),
+        "Independent": helm,
         "Unverified": load_curated(METRIC, "unverified"),
     })
 

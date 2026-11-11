@@ -1,0 +1,25 @@
+{
+  "title": "GPQA Diamond scores over time, by source",
+  "y_label": "GPQA Diamond accuracy (%)",
+  "y_range": [0, 100],
+  "x_start": "2023-01-01",
+  "as_of": "2026-11-11",
+  "source_labels": {
+    "Independent": "Independent: Epoch AI ran every model the same way (best setting)"
+  },
+  "ceiling": {
+    "value": 92.4,
+    "label": "Above ~92%: likely matching flawed keys (~8% of questions estimated invalid; Epoch AI)"
+  },
+  "reference_lines": [
+    {"value": 64.8, "label": "PhD experts, own field: ~65% (all GPQA questions)", "side": "left"},
+    {"value": 34.1, "label": "Skilled non-experts with web search: ~34% (all GPQA)"},
+    {"value": 25.0, "label": "Random guessing 25%"}
+  ],
+  "pairs": [],
+  "annotations": [
+    {"model": "GPT-4", "source": "Primary", "text": "GPT-4  38.8%\n(original paper's best)", "offset": [10, -10]},
+    {"model": "o1", "source": "Primary", "text": "o1  75.7%", "offset": [-10, 4], "ha": "right"},
+    {"model": "gemini-4-carbon", "source": "Independent", "text": "Gemini 4 Carbon  96.5%", "offset": [-10, 6], "ha": "right"}
+  ]
+}

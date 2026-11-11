@@ -4,11 +4,13 @@ Each loader returns rows in the standard schema (metric_history.SCHEMA).
 A metric's build script (scripts/build_<metric>_scores.py) picks the loaders
 and settings it needs, then calls write_scores().
 
-Source types:
-  Primary    - hand-checked scores (data/<metric>/primary.csv)
-  Epoch      - Epoch AI Benchmarking Hub "external runs" (CC-BY)
-  HELM       - Stanford CRFM HELM leaderboards (independent, same setup)
-  Unverified - aggregator scores not checked by us (data/<metric>/unverified.csv)
+Source roles (the `source` column):
+  Primary     - hand-checked scores (data/<metric>/primary.csv)
+  Independent - one organization re-ran every model the same way:
+                Stanford CRFM HELM, Epoch AI's own runs
+  Compiled    - reported scores collected in one place: Epoch AI's
+                "external runs" (CC-BY)
+  Unverified  - aggregator scores not checked by us (data/<metric>/unverified.csv)
 """
 
 import csv
@@ -81,7 +83,7 @@ def load_epoch(csv_name: str, exclude_link_substrings: tuple[str, ...] = ()) -> 
             "date_basis": "release",
             "score": round(float(r["EM"]) * 100, 2),
             "setup_detail": _epoch_setup(r["Shots"].strip(), r["Notes"]),
-            "source": "Epoch",
+            "source": "Compiled",
             "original_source": r["Source"].strip(),
             "source_url": r["Source link"],
             "notes": "",
@@ -111,11 +113,48 @@ def load_helm(project: str, release: str, group: str, setup_detail: str,
             "date_basis": "release",
             "score": round(score * 100, 2),
             "setup_detail": setup_detail,
-            "source": "HELM",
+            "source": "Independent",
             "original_source": f"Stanford CRFM HELM ({project}) {release}",
             "source_url": page_url,
             "notes": "",
         })
+    return rows
+
+
+def load_epoch_runs(csv_name: str, page_url: str, best_per_model: bool = True) -> list[dict]:
+    """Epoch AI's own benchmark runs (e.g. 'gpqa_diamond.csv').
+
+    Epoch often runs one model at several settings (reasoning effort, token
+    budget), encoded as a suffix after the last "_" in the model version.
+    With best_per_model, keep only each model's best setting - matching how
+    labs usually report a single headline number.
+    """
+    text = _epoch_zip().read(csv_name).decode("utf-8")
+    rows = []
+    for r in csv.DictReader(io.StringIO(text)):
+        if not r["Release date"] or not r["mean_score"]:
+            continue
+        version = r["Model version"]
+        base, _, setting = version.rpartition("_") if "_" in version else (version, "", "")
+        stderr = r.get("stderr") or ""
+        rows.append({
+            "model": base,
+            "date": r["Release date"],
+            "date_basis": "release",
+            "score": round(float(r["mean_score"]) * 100, 2),
+            "setup_detail": f"Epoch AI harness; setting: {setting or 'default'}"
+                            + (f"; stderr ±{float(stderr) * 100:.1f}" if stderr else ""),
+            "source": "Independent",
+            "original_source": "Epoch AI Benchmarking Hub (Epoch's own runs)",
+            "source_url": page_url,
+            "notes": "",
+        })
+    if best_per_model:
+        best: dict[str, dict] = {}
+        for r in rows:
+            if r["model"] not in best or r["score"] > best[r["model"]]["score"]:
+                best[r["model"]] = r
+        rows = list(best.values())
     return rows
 
 

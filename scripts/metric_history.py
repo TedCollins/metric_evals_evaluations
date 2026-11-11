@@ -34,7 +34,7 @@ SCHEMA = [
     "date_basis",       # "release" | "evaluated" | "reported" (see docstring)
     "score",            # 0-100
     "setup_detail",     # how the test was run (shots, chain-of-thought...)
-    "source",           # Primary | Epoch | HELM | Unverified
+    "source",           # role: Primary | Independent | Compiled | Unverified
     "original_source",  # paper / report / leaderboard title
     "source_url",
     "notes",
@@ -46,24 +46,28 @@ THEMES = {
     "light": {
         "surface": "#fcfcfb", "text": "#0b0b0b", "text2": "#52514e",
         "muted": "#898781", "grid": "#e1e0d9", "axis": "#c3c2b7", "band": "#f1f0ec",
-        "series": {"Primary": "#2a78d6", "Epoch": "#eb6834", "HELM": "#1baf7a",
+        "series": {"Primary": "#2a78d6", "Compiled": "#eb6834", "Independent": "#1baf7a",
                    "Unverified": "#52514e"},
     },
     "dark": {
         "surface": "#1a1a19", "text": "#f0efec", "text2": "#c3c2b7",
         "muted": "#898781", "grid": "#2c2c2a", "axis": "#383835", "band": "#242423",
-        "series": {"Primary": "#3987e5", "Epoch": "#d95926", "HELM": "#199e70",
+        "series": {"Primary": "#3987e5", "Compiled": "#d95926", "Independent": "#199e70",
                    "Unverified": "#c3c2b7"},
     },
 }
 
+# Source roles: what kind of number it is, not who published it (the
+# publisher is in `original_source`). chart.json may override the legend
+# text per role via "source_labels" to name the organization.
 SOURCES = {  # draw order = list order (later on top)
     "Unverified": "Unverified: secondary aggregators, not checked by us",
-    "Epoch": "Epoch AI: reported scores collected by Epoch",
-    "HELM": "HELM: Stanford re-ran every model the same way",
+    "Compiled": "Compiled: reported scores collected in one place",
+    "Independent": "Independent: one organization re-ran every model the same way",
     "Primary": "Primary: original paper / model report, checked by us",
 }
-LEGEND_ORDER = ["Primary", "HELM", "Epoch", "Unverified"]
+LEGEND_ORDER = ["Primary", "Independent", "Compiled", "Unverified"]
+ZORDER = {"Unverified": 3, "Compiled": 4, "Independent": 5, "Primary": 6}
 
 
 def load_scores(metric: str) -> list[dict]:
@@ -132,7 +136,7 @@ def plot(metric: str, rows: list[dict], cfg: dict, mode: str, out_paths: list[Pa
                    facecolors=t["surface"] if hollow else col,
                    edgecolors=col if hollow else t["surface"],
                    linewidths=1.3 if hollow else 1.2,
-                   zorder={"Unverified": 3, "Epoch": 4, "HELM": 5, "Primary": 6}[src])
+                   zorder=ZORDER[src])
 
     def find(model, source):
         return [r for r in rows if r["model"] == model and r["source"] == source]
@@ -174,14 +178,16 @@ def plot(metric: str, rows: list[dict], cfg: dict, mode: str, out_paths: list[Pa
              "Gray step line = best score reported so far (all sources, any test setup).",
              ha="left", va="top", fontsize=9, color=t["text2"])
 
+    labels = {**SOURCES, **cfg.get("source_labels", {})}
+    present = {r["source"] for r in rows}
     handles = []
-    for s in LEGEND_ORDER:
+    for s in [s for s in LEGEND_ORDER if s in present]:
         col = t["series"][s]
         hollow = s == "Unverified"
         handles.append(Line2D([], [], ls="", marker="o", ms=8,
                               markerfacecolor=t["surface"] if hollow else col,
                               markeredgecolor=col if hollow else t["surface"],
-                              markeredgewidth=1.3, label=SOURCES[s]))
+                              markeredgewidth=1.3, label=labels[s]))
     leg = fig.legend(handles=handles, title="Source", loc="lower left",
                      bbox_to_anchor=(0.055, 0.0), ncol=2, frameon=False, fontsize=8.5,
                      labelcolor=t["text"], title_fontsize=9, alignment="left",

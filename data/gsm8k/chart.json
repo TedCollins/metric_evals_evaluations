@@ -7,6 +7,10 @@
   ],
   "x_start": "2021-07-01",
   "as_of": "2026-11-11",
+  "source_labels": {
+    "Independent": "Independent: Stanford HELM re-ran every model the same way",
+    "Compiled": "Compiled: Epoch AI's collection of reported scores"
+  },
   "ceiling": {
     "value": 96.6,
     "label": "Above ~96.6%: mostly flawed questions (GSM8K-Platinum; our estimate)"

@@ -14,6 +14,9 @@ A fixed set of test questions or tasks, plus a scoring rule, used to compare AI 
 ### Calibration
 Whether a model's confidence matches how often it is actually right. A well-calibrated model that says "80% sure" is right about 80% of the time.
 
+### Canary string
+A unique random code placed inside a benchmark's files. Companies training AI models can search their training data for it and remove any text that contains it, which keeps the test questions out of what the model learns from.
+
 ### Chain-of-thought (CoT)
 Prompting a model to reason step by step before giving its final answer. It usually raises scores on reasoning questions.
 
@@ -35,8 +38,14 @@ A public ranking of models by their benchmark scores.
 ### Majority vote (maj@k)
 Asking the model the same question *k* times and counting the most common answer. "maj1@32" means a majority vote over 32 attempts. This usually raises scores, so it isn't comparable with a single-attempt score.
 
+### Reasoning effort
+A setting on many 2025–2026 models that controls how long the model "thinks" (how much hidden step-by-step reasoning it does) before answering. Higher effort usually means higher scores, so the same model can post very different numbers.
+
 ### Saturation
 When the top models score close to the maximum possible on a benchmark, so it can no longer tell them apart.
+
+### Standard error
+A measure of how much a score would move by chance, for example if the test had a different random sample of questions or the model answered again. A score of 90% ± 2 means differences of a point or two aren't meaningful.
 
 ### Training data
 The large body of text (mostly from the web) that a model learns from before it is released.
