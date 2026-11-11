@@ -106,12 +106,23 @@ docs/
     saturation.md
     ...
   glossary.md
-  _template-benchmark.md
+  img/<metric>-history-{light,dark}.svg   # standard charts (generated)
+  _template-metric-card.md                # each benchmark page is a "metric card"
+data/
+  <metric>/
+    scores.csv      # standard schema: one row per reported score, with source
+    chart.json      # per-metric chart settings (reference lines, ceiling)
+    primary.csv     # hand-checked scores
+    unverified.csv  # aggregator scores not yet checked
+scripts/
+  build_<metric>_scores.py   # merges that metric's sources into scores.csv
+  metric_history.py          # standard chart, shared by every metric card
 REQUIREMENTS.md
 ```
 
 ## 10. Open questions
 
-- Should model scores be kept in a small data file (CSV) so tables stay consistent across pages?
+- ~~Should model scores be kept in a small data file (CSV) so tables stay consistent across pages?~~ Yes: `data/<metric>/scores.csv`, using the standard schema in the metric card template.
+- Which other standard charts should every metric card have, e.g. verified vs. unverified spread, or a score distribution per year?
 - Should the earlier idea of a **criteria taxonomy** come back later as a capstone, i.e. "what makes a good benchmark", drawn from the issues found?
 - How should the docs handle benchmarks with several versions (MMLU vs. MMLU-Pro vs. MMLU-Redux): one page or several?

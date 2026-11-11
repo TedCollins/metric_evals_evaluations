@@ -12,7 +12,7 @@ _Last updated: 2026-11-11 · Area: Knowledge & reasoning_
 | **Metric** | Accuracy (% of questions answered correctly), usually averaged over the 57 subjects |
 | **Random guessing** | 25% |
 | **Human baseline** | 34.5% for non-expert crowdworkers; ~89.8% estimated for experts [1] |
-| **Top scores** | High 80s to low 90s for frontier models since 2024 (e.g. GPT-4o: 88.7%, vendor-reported, May 2024) [9] |
+| **Top scores** | 92.9% verified (o3, OpenAI simple-evals, Apr 2025) [13]; up to 95.2% unverified (Gemini 4 Argon, Kaggle Open Benchmarks, Oct 2026) [16] |
 | **Status** | **Saturated.** Top models are close to the ceiling set by its own answer-key errors (see below). |
 
 ---
@@ -76,6 +76,27 @@ Newer reports often use **chain-of-thought** prompting, where the model reasons 
 
 ## History and scores
 
+![Scatter chart of reported MMLU scores by model release date, 2020 to late 2026. Scores climb from GPT-3's 43.9% in 2020 to around 86% by 2023, then flatten. By 2025 and 2026 they bunch up between 90% and 95%, most of them unverified aggregator scores, with the highest at 95.2% (Gemini 4 Argon, unverified). Colors show the data source: primary reports, Stanford HELM and Epoch AI; unverified scores are hollow gray rings. Gemini Ultra appears twice, at 90.0% with chain-of-thought and 83.7% with standard 5-shot.](../../img/mmlu-history-light.svg)
+
+_Dark-theme version: [mmlu-history-dark.svg](../../img/mmlu-history-dark.svg)_
+
+**How to read this chart.** Each point is one reported score. **Color shows where the number came from**:
+- **Primary** (blue): taken by hand from the original paper or model report, and checked by us [1][7][12][13].
+- **HELM** (green): Stanford re-ran every model itself with the *same* prompt and setup (5-shot, all 57 subjects) [15]. These points are truly comparable with each other.
+- **Epoch AI** (orange): scores from papers and announcements, compiled by Epoch AI's Benchmarking Hub [14]. These are self-reported, but collected in one place.
+- **Unverified** (hollow gray): scores from secondary aggregators that we haven't checked against an original source. Almost all of them are Kaggle "Open Benchmarks" runs, listed on BenchLM [16]. For models released after early 2026, the release date wasn't available, so the point sits at the date Kaggle first evaluated the model (`date_basis = evaluated` in the data).
+
+The gray step line traces the best score reported so far across all sources and test setups, so it makes progress look smoother than a like-for-like comparison would. How each score was measured (number of examples, chain-of-thought) is recorded in the data file but not shown on the chart.
+
+What stands out:
+- **The climb stops in 2023.** Scores rose about 40 points between 2020 and 2023, then spread out across a narrow 87–93% band.
+- **Since 2025, almost every reported score is unverified.** Epoch's MMLU data ends in December 2024 and HELM's last MMLU release was in January 2025. Labs mostly stopped headlining MMLU, so recent numbers come mainly from aggregators.
+- **Recent unverified scores sit inside the ceiling zone.** Several 2026 models are listed at 94–95%, above the ~93.5% point where answer-key errors should start to cap meaningful scores. Either these runs use a cleaned-up question set, or the models are matching flawed keys. **[suspected]**
+- **The same model gets different numbers.** Gemini Ultra appears at both 90.0% and 83.7%. GPT-4o was announced at 88.7% but is listed at 87.2% in OpenAI's own evaluation repo [13]. o3 is 92.9% in OpenAI's repo and 92.3% on Kaggle.
+- **HELM's independent re-runs top out around 87%** (Claude 3.5 Sonnet, DeepSeek-V3). That is a little below the best self-reported numbers from the same period.
+
+Data: [`data/mmlu/scores.csv`](../../../data/mmlu/scores.csv), with one row per point and a source link on each row. Rebuild with `python3 scripts/build_mmlu_scores.py`, then `python3 scripts/metric_history.py mmlu`.
+
 | When | What happened |
 |------|---------------|
 | 2020 | Released. Most models score close to random (25%). The largest GPT-3 scores **43.9%** with few-shot prompting, and UnifiedQA scores 48.9%. [1] |
@@ -83,6 +104,7 @@ Newer reports often use **chain-of-thought** prompting, where the model reasons 
 | Dec 2023 | Google announces Gemini Ultra as the first model above 90% (**90.04%**). The headline figure used a different method ("CoT@32": 32 chain-of-thought samples combined) than the GPT-4 number it was compared with. Under the same 5-shot setup, Gemini Ultra scored **83.7%** against GPT-4's 86.4%. [7][8] |
 | Jun 2024 | *Are We Done with MMLU?* [4] documents widespread answer-key errors. MMLU-Pro [5] launches as a harder replacement. |
 | 2024–2025 | Frontier models cluster at around 88–92%. Leaderboards increasingly show MMLU "for reference only". [9] |
+| 2025–2026 | Labs mostly stop headlining MMLU. Aggregator runs list new models at 90–95%, with a top unverified score of 95.2%. [16] |
 
 The Gemini episode is a useful lesson for readers: **a benchmark name alone doesn't tell you how the number was produced.**
 
@@ -93,7 +115,7 @@ Evidence levels: **[documented]** published analysis · **[reported]** credible 
 ### Contamination and saturation
 
 - **[documented] Signs of test-set memorization.** Deng et al. (2023) hid one *wrong* answer option in MMLU test questions and asked models to fill it in. A model that has never seen the question should almost never reproduce the exact wording of a wrong option. ChatGPT and GPT-4 matched the hidden option exactly **52%** and **57%** of the time, which strongly suggests the test questions appeared in their training data. [6]
-- **[documented] Saturation.** Top scores have barely moved since 2024 and sit at roughly 88–92%. With an estimated ~6.5% of questions flawed [4], the highest score a model can *meaningfully* reach is somewhere in the low-to-mid 90s. The remaining gaps between top models are as likely to reflect noise in the key as real differences in ability. **[suspected]** (That inference is ours, built on [4].)
+- **[documented] Saturation.** Verified top scores have barely moved since 2024 and sit at roughly 88–93%. Unverified aggregator runs reach 94–95% (see the chart above). With an estimated ~6.5% of questions flawed [4], the highest score a model can *meaningfully* reach is somewhere in the low-to-mid 90s. The remaining gaps between top models are as likely to reflect noise in the key as real differences in ability. **[suspected]** (That inference is ours, built on [4].)
 
 ### Construct validity
 
@@ -138,4 +160,8 @@ Evidence levels: **[documented]** published analysis · **[reported]** credible 
 9. BenchLM, MMLU leaderboard (accessed 2026-11). https://www.benchlm.ai/benchmarks/mmlu. Vendor launch page for GPT-4o: https://openai.com/index/hello-gpt-4o
 10. De Gascun, C. F. & Carr, M. J. (2013). *Human polyomavirus reactivation: disease pathogenesis and treatment approaches.* Clinical and Developmental Immunology. https://pmc.ncbi.nlm.nih.gov/articles/PMC3659475
 12. OpenAI (2023). *GPT-4 Technical Report.* https://arxiv.org/abs/2303.08774
+13. OpenAI, *simple-evals* (scores for GPT-4o, o1, GPT-4.5, GPT-4.1, o3; 0-shot chain-of-thought). https://github.com/openai/simple-evals
+14. Epoch AI, Benchmarking Hub, LLM benchmark data, "external runs", MMLU (CC-BY; downloaded 2026-11-11). https://epoch.ai/benchmarks/use-this-data
+15. Stanford CRFM, HELM MMLU leaderboard, release v1.13.0 (2025-01-10). https://crfm.stanford.edu/helm/mmlu/latest/
+16. BenchLM, MMLU leaderboard, including Kaggle Open Benchmarks results (snapshot 2026-10-23; accessed 2026-11-11). Not independently verified. https://benchlm.ai/benchmarks/mmlu
 11. Alzahrani, N. et al. (2024). *When Benchmarks are Targets: Revealing the Sensitivity of Large Language Model Leaderboards.* ACL 2024. https://arxiv.org/abs/2402.01781

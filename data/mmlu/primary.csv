@@ -1,0 +1,10 @@
+model,date,date_basis,score,setup_detail,source_title,source_url,notes
+GPT-3 (175B),2020-05-28,release,43.9,few-shot,Measuring Massive Multitask Language Understanding (Hendrycks et al. 2020),https://arxiv.org/abs/2009.03300,Original MMLU paper; release date = GPT-3 paper
+GPT-4,2023-03-14,release,86.4,5-shot,GPT-4 Technical Report,https://arxiv.org/abs/2303.08774,
+Gemini Ultra,2023-12-06,release,90.04,CoT@32 (uncertainty-routed),Gemini: A Family of Highly Capable Multimodal Models,https://arxiv.org/abs/2312.11805,Headline launch figure
+Gemini Ultra,2023-12-06,release,83.7,5-shot,Gemini: A Family of Highly Capable Multimodal Models,https://arxiv.org/abs/2312.11805,Same model under the standard 5-shot setup
+GPT-4o (2024-05-13),2024-05-13,release,87.2,0-shot chain-of-thought,openai/simple-evals README,https://github.com/openai/simple-evals,Launch page figure was 88.7 (not verified directly)
+o1,2024-12-05,release,91.8,0-shot chain-of-thought,openai/simple-evals README,https://github.com/openai/simple-evals,
+GPT-4.5 (preview),2025-02-27,release,90.8,0-shot chain-of-thought,openai/simple-evals README,https://github.com/openai/simple-evals,
+GPT-4.1,2025-04-14,release,90.2,0-shot chain-of-thought,openai/simple-evals README,https://github.com/openai/simple-evals,
+o3,2025-04-16,release,92.9,0-shot chain-of-thought,openai/simple-evals README,https://github.com/openai/simple-evals,

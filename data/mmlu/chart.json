@@ -1,0 +1,29 @@
+{
+  "title": "MMLU scores over time, by source",
+  "y_label": "MMLU accuracy (%)",
+  "y_range": [0, 100],
+  "x_start": "2020-03-01",
+  "as_of": "2026-11-11",
+  "ceiling": {
+    "value": 93.51,
+    "label": "Above ~93.5%: likely matching wrong answer keys (~6.5% of questions are flawed; our estimate)"
+  },
+  "reference_lines": [
+    {"value": 89.8, "label": "Expert estimate 89.8%", "side": "left"},
+    {"value": 34.5, "label": "Non-expert humans 34.5%"},
+    {"value": 25.0, "label": "Random guessing 25%"}
+  ],
+  "pairs": [
+    {
+      "model": "Gemini Ultra",
+      "source": "Primary",
+      "text": "Gemini Ultra: 90.0% (chain-of-thought, 32 tries)\nvs 83.7% (standard 5-shot), same model",
+      "text_at": ["2020-07-01", 79]
+    }
+  ],
+  "annotations": [
+    {"model": "GPT-3 (175B)", "source": "Primary", "text": "GPT-3  43.9%", "offset": [12, -4]},
+    {"model": "GPT-4", "source": "Primary", "text": "GPT-4  86.4%", "offset": [-10, 0], "ha": "right"},
+    {"model": "Gemini 4 Argon", "source": "Unverified", "text": "Gemini 4 Argon  95.2% (unverified)", "offset": [-10, 4], "ha": "right"}
+  ]
+}
