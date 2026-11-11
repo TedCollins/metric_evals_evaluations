@@ -1,0 +1,20 @@
+model,date,date_basis,score,setup_detail,source_title,source_url,notes
+Claude 3 Opus,2024-03-04,release,95.0,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Claude 3.5 Sonnet,2024-06-20,release,96.4,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Llama 3.1 405B Instruct,2024-07-23,release,96.8,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,Same score listed by benchmarklist.com
+o1,2024-12-05,release,97.1,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Mistral Small 3 24B Base,2025-01-30,release,80.7,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Phi 4 Mini,2025-02-26,release,88.6,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+GPT-4.5,2025-02-27,release,97.0,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Gemma 3 27B,2025-03-12,release,95.9,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Gemma 3 12B,2025-03-12,release,94.4,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Gemma 3 4B,2025-03-12,release,89.2,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Gemma 3 1B,2025-03-12,release,62.8,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Granite 3.3 8B Instruct,2025-04-16,release,80.9,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Qwen3 235B A22B,2025-04-29,release,94.4,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+ERNIE 4.5,2025-06-30,release,25.2,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,Outlier: implausibly low for a frontier-scale model; likely a data-entry or parsing error
+Kimi K2 Instruct,2025-07-11,release,97.3,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+Kimi K2 Base,2025-07-11,release,92.1,not reported by aggregator,llm-stats (self-reported scores; accessed 2026-11-11),https://llm-stats.com/benchmarks/gsm8k,
+MiMo-V2.5-Pro,2026-05-06,reported,99.6,not reported by aggregator,benchmarklist.com (sampled 2026-05-06),https://benchmarklist.com/benchmarks/gsm8k/,Highest reported; release date unknown. Above the noise floor implied by GSM8K-Platinum
+Granite 4.1 30B,2026-05-06,reported,94.16,not reported by aggregator,benchmarklist.com (sampled 2026-05-06),https://benchmarklist.com/benchmarks/gsm8k/,Release date unknown
+DeepSeek-V4-Pro,2026-05-06,reported,92.6,not reported by aggregator,benchmarklist.com (sampled 2026-05-06),https://benchmarklist.com/benchmarks/gsm8k/,Release date unknown

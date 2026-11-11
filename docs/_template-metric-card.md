@@ -63,7 +63,7 @@ Every metric card uses the same chart, made by `scripts/metric_history.py` from 
 |--------|---------|
 | `model` | Model name as the source gives it |
 | `date` | YYYY-MM-DD |
-| `date_basis` | `release` (model release date) or `evaluated` (release date unknown; first evaluation date used) |
+| `date_basis` | `release` (model release date), `evaluated` (release unknown; first independent evaluation date) or `reported` (release unknown; earliest date an aggregator listed the score) |
 | `score` | 0–100 |
 | `setup_detail` | How the test was run (shots, chain-of-thought…). Recorded here, not shown on the chart |
 | `source` | `Primary` (checked by us) · `HELM` (independent, same setup) · `Epoch` (compiled self-reports) · `Unverified` (aggregators, not checked) |

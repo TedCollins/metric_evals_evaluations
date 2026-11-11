@@ -7,8 +7,10 @@ Every metric card uses the same chart, driven by two files in data/<metric>/:
                 band, and a few labeled points
 
 Visual standard:
-  * x = date (model release date, or first-evaluation date when the release
-    date is unknown; see `date_basis`), y = score
+  * x = date, y = score. `date_basis` says what the date is: "release"
+    (model release date), "evaluated" (release unknown; date of first
+    independent evaluation) or "reported" (release unknown; earliest date
+    an aggregator listed the score)
   * color = source of the number; Unverified = hollow gray ring
   * gray step line = best score reported so far (all sources)
   * dashed reference lines (random, human baselines...) and a shaded
@@ -29,7 +31,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SCHEMA = [
     "model",            # model name as given by the source
     "date",             # YYYY-MM-DD
-    "date_basis",       # "release" | "evaluated" (release date unknown)
+    "date_basis",       # "release" | "evaluated" | "reported" (see docstring)
     "score",            # 0-100
     "setup_detail",     # how the test was run (shots, chain-of-thought...)
     "source",           # Primary | Epoch | HELM | Unverified
@@ -155,7 +157,7 @@ def plot(metric: str, rows: list[dict], cfg: dict, mode: str, out_paths: list[Pa
     ax.set_xlim(x0, x1)
     ax.set_ylim(y0, y1)
     ax.set_ylabel(cfg["y_label"], color=t["text2"])
-    ax.set_xlabel("Model release date (or first-evaluation date if unknown)", color=t["text2"])
+    ax.set_xlabel("Model release date (or first-seen date if unknown)", color=t["text2"])
     ax.xaxis.set_major_locator(mdates.YearLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
     ax.grid(axis="y", color=t["grid"], lw=0.8, zorder=0)

@@ -1,0 +1,58 @@
+{
+  "title": "GSM8K scores over time, by source",
+  "y_label": "GSM8K accuracy (%)",
+  "y_range": [
+    0,
+    100
+  ],
+  "x_start": "2021-07-01",
+  "as_of": "2026-11-11",
+  "ceiling": {
+    "value": 96.6,
+    "label": "Above ~96.6%: mostly flawed questions (GSM8K-Platinum; our estimate)"
+  },
+  "reference_lines": [],
+  "pairs": [
+    {
+      "model": "PaLM 540B",
+      "source": "Primary",
+      "text": "PaLM 540B: 17.9% answering directly\nvs 56.9% with chain-of-thought, same model",
+      "text_at": [
+        "2021-08-01",
+        30
+      ]
+    }
+  ],
+  "annotations": [
+    {
+      "model": "GPT-3 175B (fine-tuned + verifier)",
+      "source": "Primary",
+      "text": "GPT-3 + verifier  55%\n(original paper's best)",
+      "offset": [
+        -6,
+        16
+      ],
+      "ha": "left"
+    },
+    {
+      "model": "GPT-4",
+      "source": "Primary",
+      "text": "GPT-4  92.0%",
+      "offset": [
+        -10,
+        0
+      ],
+      "ha": "right"
+    },
+    {
+      "model": "MiMo-V2.5-Pro",
+      "source": "Unverified",
+      "text": "MiMo-V2.5-Pro  99.6% (unverified)",
+      "offset": [
+        -10,
+        -9
+      ],
+      "ha": "right"
+    }
+  ]
+}

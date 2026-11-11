@@ -23,14 +23,23 @@ When test questions, or their answers, appear in the data a model was trained on
 ### Construct validity
 Whether a test measures the thing it claims to measure. A "reasoning" test that can be passed by memorizing has weak construct validity.
 
+### Exact match
+Scoring a response as correct only if its final answer matches the answer key exactly (for example, the same final number). The reasoning isn't graded.
+
 ### Few-shot
 Showing the model a few solved examples ("shots") in the prompt before the real question. "5-shot" means five examples. **Zero-shot** means no examples.
 
 ### Leaderboard
 A public ranking of models by their benchmark scores.
 
+### Majority vote (maj@k)
+Asking the model the same question *k* times and counting the most common answer. "maj1@32" means a majority vote over 32 attempts. This usually raises scores, so it isn't comparable with a single-attempt score.
+
 ### Saturation
 When the top models score close to the maximum possible on a benchmark, so it can no longer tell them apart.
 
 ### Training data
 The large body of text (mostly from the web) that a model learns from before it is released.
+
+### Verifier
+A second model trained to judge whether a solution is correct. The main model generates many attempts, and the verifier picks the one it rates most likely to be right.
