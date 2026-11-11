@@ -63,8 +63,17 @@ def _epoch_setup(shots: str, notes: str) -> str:
     return f"{shots}-shot" if shots else "not reported"
 
 
-def load_epoch(csv_name: str, exclude_link_substrings: tuple[str, ...] = ()) -> list[dict]:
-    """Rows from one Epoch external-runs CSV (e.g. 'mmlu_external.csv').
+def load_epoch(csv_name: str, exclude_link_substrings: tuple[str, ...] = (), *,
+               score_col: str = "EM", role: str = "Compiled",
+               original_source: str | None = None, source_url: str | None = None,
+               stderr_col: str | None = None, extra_note_cols: tuple[str, ...] = (),
+               setup_detail: str | None = None) -> list[dict]:
+    """Rows from one Epoch "external runs" CSV (e.g. 'mmlu_external.csv').
+
+    Usually these are reported scores Epoch collected (role "Compiled", the
+    row's own Source column naming where each came from). Some files instead
+    mirror one evaluator's same-setup leaderboard - pass role="Independent"
+    and original_source to say whose.
 
     exclude_link_substrings drops rows whose source link contains any of the
     given strings - used to drop Epoch's copies of HELM runs, which we load
@@ -73,20 +82,26 @@ def load_epoch(csv_name: str, exclude_link_substrings: tuple[str, ...] = ()) -> 
     text = _epoch_zip().read(csv_name).decode("utf-8")
     rows = []
     for r in csv.DictReader(io.StringIO(text)):
-        if any(s in r["Source link"] for s in exclude_link_substrings):
+        link = r.get("Source link", "")
+        if any(s in link for s in exclude_link_substrings):
             continue
-        if not r["Release date"] or not r["EM"]:
+        if not r["Release date"] or not r.get(score_col):
             continue
+        score = float(r[score_col])
+        setup = setup_detail or _epoch_setup(r.get("Shots", "").strip(), r.get("Notes", ""))
+        if stderr_col and r.get(stderr_col):
+            setup += f"; stderr ±{float(r[stderr_col]) * 100:.1f}"
+        notes = "; ".join(f"{c}: {r[c]}" for c in extra_note_cols if r.get(c))
         rows.append({
-            "model": r["Name"] or r["Model version"],
+            "model": r.get("Name") or r["Model version"],
             "date": r["Release date"],
             "date_basis": "release",
-            "score": round(float(r["EM"]) * 100, 2),
-            "setup_detail": _epoch_setup(r["Shots"].strip(), r["Notes"]),
-            "source": "Compiled",
-            "original_source": r["Source"].strip(),
-            "source_url": r["Source link"],
-            "notes": "",
+            "score": round(score * 100 if score <= 1 else score, 2),
+            "setup_detail": setup,
+            "source": role,
+            "original_source": original_source or r.get("Source", "").strip(),
+            "source_url": source_url or link,
+            "notes": notes,
         })
     return rows
 

@@ -5,6 +5,9 @@ Plain-language definitions of terms used across these docs.
 ### Accuracy
 The percentage of questions a model answers correctly. On a 4-option multiple-choice test, random guessing gets 25%.
 
+### Adversarial filtering
+Keeping only the test questions that current AI models get wrong. It makes a benchmark hard at launch, but skews it toward whatever those particular models happened to be bad at.
+
 ### Answer key
 The official list of correct answers for a benchmark. Keys can contain mistakes. See [MMLU](benchmarks/knowledge-reasoning/mmlu.md#label-and-metric-flaws).
 
@@ -12,7 +15,7 @@ The official list of correct answers for a benchmark. Keys can contain mistakes.
 A fixed set of test questions or tasks, plus a scoring rule, used to compare AI models.
 
 ### Calibration
-Whether a model's confidence matches how often it is actually right. A well-calibrated model that says "80% sure" is right about 80% of the time.
+Whether a model's confidence matches how often it is actually right. A well-calibrated model that says "80% sure" is right about 80% of the time. **Calibration error** measures the gap (0% is perfect).
 
 ### Canary string
 A unique random code placed inside a benchmark's files. Companies training AI models can search their training data for it and remove any text that contains it, which keeps the test questions out of what the model learns from.
@@ -32,6 +35,9 @@ Scoring a response as correct only if its final answer matches the answer key ex
 ### Few-shot
 Showing the model a few solved examples ("shots") in the prompt before the real question. "5-shot" means five examples. **Zero-shot** means no examples.
 
+### Judge model
+An AI model used to grade another model's answers, for example to decide whether a free-text answer means the same as the answer key. Convenient, but it can make its own grading mistakes.
+
 ### Leaderboard
 A public ranking of models by their benchmark scores.
 
@@ -46,6 +52,9 @@ When the top models score close to the maximum possible on a benchmark, so it ca
 
 ### Standard error
 A measure of how much a score would move by chance, for example if the test had a different random sample of questions or the model answered again. A score of 90% ± 2 means differences of a point or two aren't meaningful.
+
+### Tool use
+Letting a model call outside tools while answering, such as web search, a calculator or a code interpreter. Scores with tools are usually much higher than without, so the two aren't comparable.
 
 ### Training data
 The large body of text (mostly from the web) that a model learns from before it is released.

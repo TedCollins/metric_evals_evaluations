@@ -1,0 +1,25 @@
+{
+  "title": "Humanity's Last Exam scores over time, by source",
+  "y_label": "HLE accuracy (%)",
+  "y_range": [0, 100],
+  "x_start": "2024-07-01",
+  "as_of": "2026-11-11",
+  "source_labels": {
+    "Primary": "Primary: original HLE paper (no tools), checked by us",
+    "Independent": "Independent: official HLE evaluation by CAIS / Scale AI (no tools)",
+    "Unverified": "Unverified: self-reported (tool use not stated), not checked by us"
+  },
+  "ceiling": {
+    "value": 75,
+    "label": "Above ~75%: questions estimated impossible as written (Epoch review: 12 of 48 sampled; small sample)"
+  },
+  "reference_lines": [
+    {"value": 4.8, "label": "Random guessing ~4.8% (Epoch estimate)"}
+  ],
+  "pairs": [],
+  "annotations": [
+    {"model": "GPT-4o", "source": "Primary", "text": "GPT-4o  2.7%\n(paper, Jan 2025)", "offset": [-8, 16], "ha": "right"},
+    {"model": "GPT 6 Astra", "source": "Independent", "text": "GPT-6 Astra  54.8%\n(best official score)", "offset": [-7, -11], "ha": "right"},
+    {"model": "Claude Fable 5.2", "source": "Unverified", "text": "Claude Fable 5.2  73.2%\n(self-reported)", "offset": [-10, 4], "ha": "right"}
+  ]
+}

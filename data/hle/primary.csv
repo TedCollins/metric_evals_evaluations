@@ -1,0 +1,9 @@
+model,date,date_basis,score,setup_detail,source_title,source_url,notes
+Grok 2,2024-08-13,release,3.0,no tools; o3-mini judge; full multimodal set,Humanity's Last Exam (Phan et al. 2025) Table 1,https://arxiv.org/abs/2501.14249,RMS calibration error 87%
+Gemini 1.5 Pro,2024-09-24,release,4.6,no tools; o3-mini judge; full multimodal set,Humanity's Last Exam (Phan et al. 2025) Table 1,https://arxiv.org/abs/2501.14249,RMS calibration error 88%
+Claude 3.5 Sonnet,2024-10-22,release,4.1,no tools; o3-mini judge; full multimodal set,Humanity's Last Exam (Phan et al. 2025) Table 1,https://arxiv.org/abs/2501.14249,RMS calibration error 84%
+GPT-4o,2024-11-20,release,2.7,no tools; o3-mini judge; full multimodal set,Humanity's Last Exam (Phan et al. 2025) Table 1,https://arxiv.org/abs/2501.14249,RMS calibration error 89%
+o1,2024-12-17,release,8.0,no tools; o3-mini judge; full multimodal set,Humanity's Last Exam (Phan et al. 2025) Table 1,https://arxiv.org/abs/2501.14249,RMS calibration error 83%
+Gemini 2.0 Flash Thinking,2024-12-19,release,6.6,no tools; o3-mini judge; full multimodal set,Humanity's Last Exam (Phan et al. 2025) Table 1,https://arxiv.org/abs/2501.14249,RMS calibration error 82%
+DeepSeek-R1,2025-01-20,release,8.5,no tools; o3-mini judge; text-only subset,Humanity's Last Exam (Phan et al. 2025) Table 1,https://arxiv.org/abs/2501.14249,Text-only subset (model not multimodal); RMS calibration error 73%
+o3-mini (high),2025-01-31,release,13.4,no tools; o3-mini judge; text-only subset,Humanity's Last Exam (Phan et al. 2025) Table 1,https://arxiv.org/abs/2501.14249,Text-only subset (model not multimodal); RMS calibration error 80%
