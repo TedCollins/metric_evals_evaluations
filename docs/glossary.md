@@ -11,6 +11,9 @@ The percentage of questions a model answers correctly. On a 4-option multiple-ch
 ### Adversarial filtering
 Keeping only the test questions that current AI models get wrong. It makes a benchmark hard at launch, but skews it toward whatever those particular models happened to be bad at.
 
+### Agent
+An AI system that takes actions toward a goal, such as calling tools, changing records or browsing, often over many steps, rather than just answering one question.
+
 ### Answer key
 The official list of correct answers for a benchmark. Keys can contain mistakes. See [MMLU](benchmarks/knowledge-reasoning/mmlu.md#label-and-metric-flaws).
 
@@ -51,7 +54,10 @@ A public ranking of models by their benchmark scores.
 Asking the model the same question *k* times and counting the most common answer. "maj1@32" means a majority vote over 32 attempts. This usually raises scores, so it isn't comparable with a single-attempt score.
 
 ### pass^k
-"Pass-hat-k": the chance a model succeeds on **all** *k* attempts at the same task, not just one. It measures consistency. A model with 80% single-try accuracy can have a much lower pass^8. See [reliability](concepts/reliability.md#does-it-succeed-every-time-passk).
+"Pass-hat-k": the chance a model succeeds on **all** *k* attempts at the same task, not just one. It measures consistency. A model with 80% single-try accuracy can have a much lower pass^8. See the [pass^k metric card](metrics/pass-k.md).
+
+### pass@k (pass-at-k)
+The chance that **at least one** of *k* attempts succeeds: the opposite question to pass^k. It is useful when you can check answers and keep a working one (e.g. code that passes tests), but it says nothing about consistency.
 
 ### Reasoning effort
 A setting on many 2025–2026 models that controls how long the model "thinks" (how much hidden step-by-step reasoning it does) before answering. Higher effort usually means higher scores, so the same model can post very different numbers.
@@ -65,6 +71,9 @@ How well a model's performance holds up when a question is reworded, its names o
 ### Saturation
 When the top models score close to the maximum possible on a benchmark, so it can no longer tell them apart.
 
+### Scaffold
+The code wrapped around a model to turn it into an agent: how it is prompted, how its tool calls are run and how the conversation is managed. The same model can score very differently with different scaffolds.
+
 ### Standard error
 A measure of how much a score would move by chance, for example if the test had a different random sample of questions or the model answered again. A score of 90% ± 2 means differences of a point or two aren't meaningful.
 
@@ -73,6 +82,9 @@ Letting a model call outside tools while answering, such as web search, a calcul
 
 ### Training data
 The large body of text (mostly from the web) that a model learns from before it is released.
+
+### User simulator
+An AI model that plays the human user in an agent benchmark (for example, a customer in τ-bench) by following a hidden brief. Its own mistakes and randomness affect the agent's score.
 
 ### Verifier
 A second model trained to judge whether a solution is correct. The main model generates many attempts, and the verifier picks the one it rates most likely to be right.

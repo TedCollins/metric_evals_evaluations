@@ -12,8 +12,15 @@ When a lab announces "92% on GPQA" or "state of the art on Humanity's Last Exam"
 | [GSM8K](docs/benchmarks/knowledge-reasoning/gsm8k.md) | Grade-school math word problems | Saturated | 95.6% (Stanford HELM, Oct 2024) | ~96.6% |
 | [GPQA Diamond](docs/benchmarks/knowledge-reasoning/gpqa-diamond.md) | PhD-level science questions you can't simply look up | Near saturation | 96.5% (Epoch AI, Oct 2026) | ~92% |
 | [Humanity's Last Exam](docs/benchmarks/knowledge-reasoning/hle.md) | Expert questions chosen because 2024's AI models failed them | **Not saturated** | 54.8% (official evaluation, Sep 2026) | ~75% |
+| [τ-bench](docs/benchmarks/agents/tau-bench.md) (airline) | AI agents doing customer service with tools and policies | Superseded | 56% (Princeton HAL, 2025) | n/a: only 26 of 50 tasks pass quality review |
 
 \* The score above which, by our estimate, gains mostly reflect flawed questions or answer keys rather than real ability. Each card explains its estimate and how uncertain it is. Scores are as of November 2026.
+
+**Metric cards for scoring rules** (not benchmarks):
+
+| Metric | What it measures |
+|--------|------------------|
+| [pass^k](docs/metrics/pass-k.md) | The chance a system succeeds on **all** k attempts at a task, i.e. reliability rather than average success |
 
 New to the topic? Start with the [glossary](docs/glossary.md) and the explainers on [reliability](docs/concepts/reliability.md), [contamination](docs/concepts/contamination.md) and [multiple-choice scoring](docs/concepts/multiple-choice-scoring.md).
 

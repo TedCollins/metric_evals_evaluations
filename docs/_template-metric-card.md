@@ -1,5 +1,7 @@
 <!-- Metric card template. Copy to docs/benchmarks/<area>/<metric>.md.
-     Like a model card, but for a benchmark or metric: what it tests, how far to trust it, and how its scores have moved. -->
+     Like a model card, but for a benchmark or metric: what it tests, how far to trust it, and how its scores have moved.
+     For a scoring rule rather than a benchmark (e.g. pass^k), put it in docs/metrics/, use "What it claims to measure",
+     replace Example items with a worked example, and replace the history chart with evidence tables. See docs/metrics/pass-k.md. -->
 
 # <Benchmark name>
 

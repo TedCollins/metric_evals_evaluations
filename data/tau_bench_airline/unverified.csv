@@ -1,0 +1,24 @@
+model,date,date_basis,score,setup_detail,source_title,source_url,notes
+GPT-4o,2024-05-13,release,42.8,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,Model snapshot not stated; paper measured 35.2 for gpt-4o
+Claude 3.5 Sonnet (Oct 2024),2024-10-22,release,46.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Claude 3.5 Haiku,2024-11-04,release,22.8,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+o1,2024-12-05,release,50.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+o3-mini,2025-01-31,release,32.4,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Claude 3.7 Sonnet,2025-02-24,release,58.4,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,HAL measured 52.0 (high) / 44.0
+GPT-4.5,2025-02-27,release,50.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+GPT-4.1,2025-04-14,release,49.4,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,HAL measured 36.0
+GPT-4.1 mini,2025-04-14,release,36.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+GPT-4.1 nano,2025-04-14,release,14.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+o4-mini,2025-04-16,release,49.2,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,HAL measured 56.0 (high) / 36.0 (low)
+Claude Opus 4,2025-05-22,release,59.6,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Claude Sonnet 4,2025-05-22,release,60.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+MiniMax M1 40K,2025-06-16,release,60.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+MiniMax M1 80K,2025-06-16,release,62.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Qwen3-Coder 480B A35B,2025-07-22,release,60.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Qwen3-235B-A22B-Thinking-2507,2025-07-25,release,46.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+GLM-4.5,2025-07-28,release,60.4,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+GLM-4.5-Air,2025-07-28,release,60.8,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Claude Opus 4.1,2025-08-05,release,56.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,HAL measured 52.0 (high) / 50.0
+Qwen3-Next-80B-A3B-Instruct,2025-09-10,release,44.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Qwen3-Next-80B-A3B-Thinking,2025-09-10,release,49.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Claude Sonnet 4.5,2025-09-29,release,70.0,self-reported; setup not given by aggregator,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,Highest reported on the original airline tasks

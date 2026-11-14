@@ -55,8 +55,14 @@ Candidate list, to be trimmed to the first batch:
 | MATH | Competition-level math |
 | Humanity's Last Exam | Expert-written questions at the edge of human knowledge |
 
+### Second phase (started): agents and reliability
+- **τ-bench** (done), with the **pass^k** metric card (done). Candidates: SWE-bench Verified, τ²-bench, OSWorld, SimpleQA Verified.
+
+### Metric cards for scoring rules
+Some cards describe a **scoring rule** rather than a benchmark (e.g. pass^k). They follow the same template, with "What it claims to measure", a worked example in place of example items, and evidence tables in place of the standard history chart (a scoring rule has no score history of its own).
+
 ### Later phases (out of scope for now)
-- Coding and agent benchmarks (HumanEval, SWE-bench, tool-use suites)
+- Coding benchmarks (HumanEval, SWE-bench)
 - Chat quality and human preference (Chatbot Arena, MT-Bench, LLM-as-judge)
 - Safety and truthfulness (TruthfulQA, refusal and jailbreak suites)
 
@@ -120,6 +126,10 @@ docs/
       gsm8k.md
       gpqa-diamond.md
       hle.md
+    agents/
+      tau-bench.md
+  metrics/                                # cards for scoring rules
+    pass-k.md
   concepts/
     contamination.md
     multiple-choice-scoring.md
@@ -133,6 +143,7 @@ data/
     scores.csv      # standard schema: one row per reported score, with source
     chart.json      # per-metric chart settings (reference lines, ceiling)
     primary.csv     # hand-checked scores
+    independent.csv # hand-entered independent runs, when the evaluator has no download (optional)
     unverified.csv  # aggregator scores not yet checked
 scripts/
   sources.py                 # one loader per data source (Epoch, HELM, curated CSVs)

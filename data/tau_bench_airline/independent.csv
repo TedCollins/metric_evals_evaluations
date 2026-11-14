@@ -1,0 +1,10 @@
+model,date,date_basis,score,setup_detail,source_title,source_url,notes
+DeepSeek R1,2025-01-20,release,36.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,
+Gemini 2.0 Flash (high),2025-02-05,release,28.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,
+Claude 3.7 Sonnet (high),2025-02-24,release,52.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,44.0 without extended thinking
+DeepSeek V3 (March 2025),2025-03-24,release,44.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,
+GPT-4.1,2025-04-14,release,36.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,Self-reported 49.4
+o3 (medium),2025-04-16,release,54.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,
+o4-mini (high),2025-04-16,release,56.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,Best HAL score; self-reported 49.2; 36.0 at low effort
+Claude Opus 4.1 (high),2025-08-05,release,52.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,50.0 without extended thinking; self-reported 56.0
+GPT-5 (medium),2025-08-07,release,48.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,

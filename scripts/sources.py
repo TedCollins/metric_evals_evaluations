@@ -6,6 +6,7 @@ and settings it needs, then calls write_scores().
 
 Source roles (the `source` column):
   Primary     - hand-checked scores (data/<metric>/primary.csv)
+                (Independent rows may also be hand-entered: independent.csv)
   Independent - one organization re-ran every model the same way:
                 Stanford CRFM HELM, Epoch AI's own runs
   Compiled    - reported scores collected in one place: Epoch AI's
@@ -35,8 +36,13 @@ def fetch(url: str) -> bytes:
 
 
 def load_curated(metric: str, kind: str) -> list[dict]:
-    """kind = 'primary' or 'unverified'."""
-    source = {"primary": "Primary", "unverified": "Unverified"}[kind]
+    """kind = 'primary', 'independent' or 'unverified'.
+
+    'independent' is for hand-entered rows from an evaluator that publishes
+    no machine-readable download (e.g. Princeton HAL).
+    """
+    source = {"primary": "Primary", "independent": "Independent",
+              "unverified": "Unverified"}[kind]
     path = ROOT / "data" / metric / f"{kind}.csv"
     with open(path, newline="") as f:
         return [{

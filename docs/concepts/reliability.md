@@ -28,9 +28,9 @@ They have the same accuracy, but you'd trust A far more. Suppose you need B to c
 
 **[pass^k](../glossary.md#passk)** ("pass-hat-k") is the chance a model succeeds on **all k** independent attempts at the same task. Plain accuracy (pass^1) asks whether it succeeds once. pass^8 asks whether you could count on it eight times in a row.
 
-The metric was introduced with **τ-bench**, a benchmark where AI agents handle customer-service tasks such as changing an airline booking or processing a retail return, using tools and following company policy. In the original 2024 results, even GPT-4o succeeded on fewer than half the tasks, and its **pass^8 in the retail setting was below 25%**. [1] A model that looks "usually fine" in a demo can be unreliable at scale.
+The metric was introduced with **[τ-bench](../benchmarks/agents/tau-bench.md)**, a benchmark where AI agents handle customer-service tasks such as changing an airline booking or processing a retail return, using tools and following company policy. In the original 2024 results, even GPT-4o succeeded on fewer than half the tasks, and its **pass^8 in the retail setting was below 25%**. [1] A model that looks "usually fine" in a demo can be unreliable at scale.
 
-*Ask of any score:* is this one attempt, or success across repeated attempts?
+*Ask of any score:* is this one attempt, or success across repeated attempts? (Full detail: the [pass^k metric card](../metrics/pass-k.md).)
 
 ### Does it know when it might be wrong? (calibration)
 
@@ -94,7 +94,7 @@ Even a perfect model gets an unreliable score from an unreliable test. Our metri
 ## How our metric cards cover reliability
 
 - **Benchmark reliability** is covered on every card, under *Label and metric flaws* (answer-key errors, implementation sensitivity, standard errors) and through the **effective ceiling**.
-- **Model reliability** is covered only in parts so far: calibration (HLE), robustness (GSM8K, MMLU) and platinum-style error counts (GSM8K). A future card for a reliability benchmark (SimpleQA Verified for hallucination, or τ-bench for pass^k) would measure it directly.
+- **Model reliability** is covered by the [τ-bench card](../benchmarks/agents/tau-bench.md) and the [pass^k metric card](../metrics/pass-k.md), and in parts elsewhere: calibration (HLE), robustness (GSM8K, MMLU) and platinum-style error counts (GSM8K). A SimpleQA Verified card would add hallucination.
 
 ## Sources
 

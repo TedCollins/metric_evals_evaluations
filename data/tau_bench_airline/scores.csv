@@ -1,0 +1,45 @@
+model,date,date_basis,score,setup_detail,source,original_source,source_url,notes
+gpt-3.5-turbo,2023-03-01,release,10.8,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+gpt-4-32k,2023-03-14,release,33.0,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+gemini-1.5-pro,2024-02-15,release,14.0,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+mistral-large,2024-02-26,release,22.4,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+claude-3-opus,2024-03-04,release,34.7,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+claude-3-sonnet,2024-03-04,release,27.6,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+claude-3-haiku,2024-03-13,release,14.4,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+gpt-4-turbo,2024-04-09,release,32.4,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+mixtral-8x22b,2024-04-17,release,31.6,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+meta-llama-3-70B,2024-04-18,release,14.4,text-formatted ReAct; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+gpt-4o,2024-05-13,release,35.2,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,Best airline score in the original paper
+GPT-4o,2024-05-13,release,42.8,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,Model snapshot not stated; paper measured 35.2 for gpt-4o
+gemini-1.5-flash,2024-05-14,release,26.0,function calling; pass^1; gpt-4-0613 user simulator,Primary,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+Claude 3.5 Sonnet (Oct 2024),2024-10-22,release,46.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Claude 3.5 Haiku,2024-11-04,release,22.8,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+o1,2024-12-05,release,50.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+DeepSeek R1,2025-01-20,release,36.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Independent,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,
+o3-mini,2025-01-31,release,32.4,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Gemini 2.0 Flash (high),2025-02-05,release,28.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Independent,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,
+Claude 3.7 Sonnet (high),2025-02-24,release,52.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Independent,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,44.0 without extended thinking
+Claude 3.7 Sonnet,2025-02-24,release,58.4,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,HAL measured 52.0 (high) / 44.0
+GPT-4.5,2025-02-27,release,50.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+DeepSeek V3 (March 2025),2025-03-24,release,44.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Independent,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,
+GPT-4.1,2025-04-14,release,36.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Independent,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,Self-reported 49.4
+GPT-4.1,2025-04-14,release,49.4,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,HAL measured 36.0
+GPT-4.1 mini,2025-04-14,release,36.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+GPT-4.1 nano,2025-04-14,release,14.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+o3 (medium),2025-04-16,release,54.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Independent,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,
+o4-mini (high),2025-04-16,release,56.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Independent,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,Best HAL score; self-reported 49.2; 36.0 at low effort
+o4-mini,2025-04-16,release,49.2,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,HAL measured 56.0 (high) / 36.0 (low)
+Claude Opus 4,2025-05-22,release,59.6,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Claude Sonnet 4,2025-05-22,release,60.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+MiniMax M1 40K,2025-06-16,release,60.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+MiniMax M1 80K,2025-06-16,release,62.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Qwen3-Coder 480B A35B,2025-07-22,release,60.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Qwen3-235B-A22B-Thinking-2507,2025-07-25,release,46.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+GLM-4.5,2025-07-28,release,60.4,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+GLM-4.5-Air,2025-07-28,release,60.8,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Claude Opus 4.1 (high),2025-08-05,release,52.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Independent,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,50.0 without extended thinking; self-reported 56.0
+Claude Opus 4.1,2025-08-05,release,56.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,HAL measured 52.0 (high) / 50.0
+GPT-5 (medium),2025-08-07,release,48.0,HAL; TAU-bench Tool Calling scaffold; 1 run; 50 tasks,Independent,Princeton HAL TAU-bench Airline leaderboard (accessed 2026-11-14),https://hal.cs.princeton.edu/taubench_airline,
+Qwen3-Next-80B-A3B-Instruct,2025-09-10,release,44.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Qwen3-Next-80B-A3B-Thinking,2025-09-10,release,49.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,
+Claude Sonnet 4.5,2025-09-29,release,70.0,self-reported; setup not given by aggregator,Unverified,llm-stats (self-reported; accessed 2026-11-14),https://llm-stats.com/benchmarks/tau-bench-airline,Highest reported on the original airline tasks

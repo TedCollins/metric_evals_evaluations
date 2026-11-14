@@ -1,0 +1,55 @@
+{
+  "title": "τ-bench airline scores over time, by source (pass^1, original 50 tasks)",
+  "y_label": "Tasks completed correctly (%)",
+  "y_range": [
+    0,
+    100
+  ],
+  "x_start": "2023-01-01",
+  "as_of": "2026-11-14",
+  "source_labels": {
+    "Primary": "Primary: original τ-bench paper, checked by us",
+    "Independent": "Independent: Princeton HAL ran every model the same way (1 run each)",
+    "Unverified": "Unverified: self-reported, not checked by us"
+  },
+  "reference_lines": [
+    {
+      "value": 52.0,
+      "label": "Only 26 of 50 tasks (52%) pass Princeton HAL's quality check",
+      "side": "left"
+    }
+  ],
+  "pairs": [],
+  "annotations": [
+    {
+      "model": "gpt-4o",
+      "source": "Primary",
+      "text": "GPT-4o  35.2%\n(paper's best)",
+      "offset": [
+        8,
+        12
+      ],
+      "ha": "left"
+    },
+    {
+      "model": "o4-mini (high)",
+      "source": "Independent",
+      "text": "o4-mini (high)  56%\n(best HAL run)",
+      "offset": [
+        -16,
+        20
+      ],
+      "ha": "right"
+    },
+    {
+      "model": "Claude Sonnet 4.5",
+      "source": "Unverified",
+      "text": "Claude Sonnet 4.5  70%\n(self-reported)",
+      "offset": [
+        -10,
+        6
+      ],
+      "ha": "right"
+    }
+  ]
+}

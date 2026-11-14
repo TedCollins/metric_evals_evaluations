@@ -1,0 +1,13 @@
+model,date,date_basis,score,setup_detail,source_title,source_url,notes
+gpt-3.5-turbo,2023-03-01,release,10.8,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+gpt-4-32k,2023-03-14,release,33.0,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+gemini-1.5-pro,2024-02-15,release,14.0,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+mistral-large,2024-02-26,release,22.4,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+claude-3-opus,2024-03-04,release,34.7,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+claude-3-sonnet,2024-03-04,release,27.6,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+claude-3-haiku,2024-03-13,release,14.4,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+gpt-4-turbo,2024-04-09,release,32.4,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+mixtral-8x22b,2024-04-17,release,31.6,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+meta-llama-3-70B,2024-04-18,release,14.4,text-formatted ReAct; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
+gpt-4o,2024-05-13,release,35.2,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,Best airline score in the original paper
+gemini-1.5-flash,2024-05-14,release,26.0,function calling; pass^1; gpt-4-0613 user simulator,τ-bench (Yao et al. 2024) Table 2,https://arxiv.org/abs/2406.12045,
