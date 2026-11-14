@@ -15,7 +15,7 @@ When a lab announces "92% on GPQA" or "state of the art on Humanity's Last Exam"
 
 \* The score above which, by our estimate, gains mostly reflect flawed questions or answer keys rather than real ability. Each card explains its estimate and how uncertain it is. Scores are as of November 2026.
 
-New to the topic? Start with the [glossary](docs/glossary.md) and the explainers on [contamination](docs/concepts/contamination.md) and [multiple-choice scoring](docs/concepts/multiple-choice-scoring.md).
+New to the topic? Start with the [glossary](docs/glossary.md) and the explainers on [reliability](docs/concepts/reliability.md), [contamination](docs/concepts/contamination.md) and [multiple-choice scoring](docs/concepts/multiple-choice-scoring.md).
 
 ## What makes this different
 

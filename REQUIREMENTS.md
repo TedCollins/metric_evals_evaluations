@@ -92,7 +92,7 @@ Sort each issue into one of three evidence levels: **documented** (published ana
 ## 7. Cross-cutting docs
 
 - **`docs/overview.md`**: the entry point. Covers what an evaluation is, why benchmarks exist, how to read a leaderboard, and a comparison table of every benchmark covered.
-- **`docs/concepts/`**: short explainers on ideas that recur across benchmarks: contamination, saturation, construct validity, few-shot prompting, multiple-choice scoring, and pass@k.
+- **`docs/concepts/`**: short explainers on ideas that recur across benchmarks: contamination, saturation, construct validity, reliability (pass^k, calibration, abstention, robustness), few-shot prompting, multiple-choice scoring, and pass@k.
 - **`docs/glossary.md`**: every term defined in one place.
 
 ## 8. Quality bar
@@ -106,7 +106,7 @@ Sort each issue into one of three evidence levels: **documented** (published ana
 
 - [ ] `docs/overview.md` is drafted.
 - [x] 3–5 benchmark pages are complete: **MMLU, GSM8K, GPQA Diamond, Humanity's Last Exam** (HellaSwag deferred).
-- [ ] The concept explainers needed by those pages are written (contamination and multiple-choice scoring done; saturation, construct validity and tool use still to write).
+- [ ] The concept explainers needed by those pages are written (contamination, multiple-choice scoring and reliability done; saturation, construct validity and tool use still to write).
 - [x] A glossary covers every term used.
 
 ## 10. Repo layout
@@ -122,8 +122,9 @@ docs/
       hle.md
   concepts/
     contamination.md
-    saturation.md
-    ...
+    multiple-choice-scoring.md
+    reliability.md
+    saturation.md                       # (to write)
   glossary.md
   img/<metric>-history-{light,dark}.svg   # standard charts (generated)
   _template-metric-card.md                # each benchmark page is a "metric card"

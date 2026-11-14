@@ -2,6 +2,9 @@
 
 Plain-language definitions of terms used across these docs.
 
+### Abstention
+When a model declines to answer ("I don't know") instead of guessing. Benchmarks that score abstentions separately from wrong answers reward models that know their limits. See [reliability](concepts/reliability.md#does-it-say-i-dont-know-abstention-and-hallucination).
+
 ### Accuracy
 The percentage of questions a model answers correctly. On a 4-option multiple-choice test, random guessing gets 25%.
 
@@ -35,6 +38,9 @@ Scoring a response as correct only if its final answer matches the answer key ex
 ### Few-shot
 Showing the model a few solved examples ("shots") in the prompt before the real question. "5-shot" means five examples. **Zero-shot** means no examples.
 
+### Hallucination
+A confident answer that is false or made up. Hallucination rate is the share of answers that are confidently wrong, as opposed to correct or abstained.
+
 ### Judge model
 An AI model used to grade another model's answers, for example to decide whether a free-text answer means the same as the answer key. Convenient, but it can make its own grading mistakes.
 
@@ -44,8 +50,17 @@ A public ranking of models by their benchmark scores.
 ### Majority vote (maj@k)
 Asking the model the same question *k* times and counting the most common answer. "maj1@32" means a majority vote over 32 attempts. This usually raises scores, so it isn't comparable with a single-attempt score.
 
+### pass^k
+"Pass-hat-k": the chance a model succeeds on **all** *k* attempts at the same task, not just one. It measures consistency. A model with 80% single-try accuracy can have a much lower pass^8. See [reliability](concepts/reliability.md#does-it-succeed-every-time-passk).
+
 ### Reasoning effort
 A setting on many 2025–2026 models that controls how long the model "thinks" (how much hidden step-by-step reasoning it does) before answering. Higher effort usually means higher scores, so the same model can post very different numbers.
+
+### Reliability
+How far you can depend on a model (does it succeed consistently, know when it's unsure, and hold up to small changes?) or on a benchmark (are its scores stable and its answer keys right?). See [reliability](concepts/reliability.md).
+
+### Robustness
+How well a model's performance holds up when a question is reworded, its names or numbers are changed, or irrelevant details are added.
 
 ### Saturation
 When the top models score close to the maximum possible on a benchmark, so it can no longer tell them apart.
