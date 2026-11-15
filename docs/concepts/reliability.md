@@ -55,7 +55,7 @@ A **[hallucination](../glossary.md#hallucination)** is a confident but false ans
 - **GSM-Symbolic** rewrote grade-school math problems with new names and numbers. Every model tested did worse, and adding one irrelevant sentence cut accuracy by **up to 65%**. [4] (See the [GSM8K card](../benchmarks/knowledge-reasoning/gsm8k.md#construct-validity).)
 - **Prompt sensitivity:** on MMLU, simply changing the prompt wording moves scores by about **4–5 points**. The harder MMLU-Pro cut that to about 2 points. [5] (See the [MMLU card](../benchmarks/knowledge-reasoning/mmlu.md#label-and-metric-flaws).)
 
-*Ask of any score:* was it measured on one fixed phrasing, or checked across variations?
+*Ask of any score:* was it measured on one fixed phrasing, or checked across variations? (Full detail: the [robustness page](robustness.md).)
 
 ### Does it fail on easy things? (platinum benchmarks)
 

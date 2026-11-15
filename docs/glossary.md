@@ -17,6 +17,9 @@ An AI system that takes actions toward a goal, such as calling tools, changing r
 ### Answer key
 The official list of correct answers for a benchmark. Keys can contain mistakes. See [MMLU](benchmarks/knowledge-reasoning/mmlu.md#label-and-metric-flaws).
 
+### Attack success rate (ASR)
+The share of deliberate attack attempts (such as jailbreaks) that succeed in making a model misbehave. Lower is better. See [robustness](concepts/robustness.md#5-adversarial-attacks).
+
 ### Benchmark
 A fixed set of test questions or tasks, plus a scoring rule, used to compare AI models.
 
@@ -35,6 +38,9 @@ When test questions, or their answers, appear in the data a model was trained on
 ### Construct validity
 Whether a test measures the thing it claims to measure. A "reasoning" test that can be passed by memorizing has weak construct validity.
 
+### Distribution shift
+When the data a model is tested or used on differs from the data it learned from, for example a new domain, language, time period or population. Performance often drops. See [robustness](concepts/robustness.md#4-distribution-shift).
+
 ### Exact match
 Scoring a response as correct only if its final answer matches the answer key exactly (for example, the same final number). The reasoning isn't graded.
 
@@ -43,6 +49,9 @@ Showing the model a few solved examples ("shots") in the prompt before the real 
 
 ### Hallucination
 A confident answer that is false or made up. Hallucination rate is the share of answers that are confidently wrong, as opposed to correct or abstained.
+
+### Jailbreak
+A prompt crafted to trick a model into ignoring its safety rules or producing content it would normally refuse.
 
 ### Judge model
 An AI model used to grade another model's answers, for example to decide whether a free-text answer means the same as the answer key. Convenient, but it can make its own grading mistakes.
@@ -59,6 +68,9 @@ Asking the model the same question *k* times and counting the most common answer
 ### pass@k (pass-at-k)
 The chance that **at least one** of *k* attempts succeeds: the opposite question to pass^k. It is useful when you can check answers and keep a working one (e.g. code that passes tests), but it says nothing about consistency.
 
+### Perturbation
+A deliberate small change to a test input that shouldn't change the correct answer (rewording, reordering options, changing names or numbers), used to test robustness.
+
 ### Reasoning effort
 A setting on many 2025–2026 models that controls how long the model "thinks" (how much hidden step-by-step reasoning it does) before answering. Higher effort usually means higher scores, so the same model can post very different numbers.
 
@@ -66,7 +78,7 @@ A setting on many 2025–2026 models that controls how long the model "thinks" (
 How far you can depend on a model (does it succeed consistently, know when it's unsure, and hold up to small changes?) or on a benchmark (are its scores stable and its answer keys right?). See [reliability](concepts/reliability.md).
 
 ### Robustness
-How well a model's performance holds up when a question is reworded, its names or numbers are changed, or irrelevant details are added.
+How well a model's performance holds up when something changes that shouldn't matter: rewording, changed names or numbers, irrelevant details, new kinds of data or deliberate attacks. See [robustness](concepts/robustness.md).
 
 ### Saturation
 When the top models score close to the maximum possible on a benchmark, so it can no longer tell them apart.
@@ -88,3 +100,6 @@ An AI model that plays the human user in an agent benchmark (for example, a cust
 
 ### Verifier
 A second model trained to judge whether a solution is correct. The main model generates many attempts, and the verifier picks the one it rates most likely to be right.
+
+### Worst-case accuracy
+The share of questions a model answers correctly in **every** variant (for example, every rewording). Stricter than average accuracy across variants, which can hide questions where wording decides the answer. See [robustness](concepts/robustness.md#worked-example-average-vs-worst-case).

@@ -22,7 +22,7 @@ When a lab announces "92% on GPQA" or "state of the art on Humanity's Last Exam"
 |--------|------------------|
 | [pass^k](docs/metrics/pass-k.md) | The chance a system succeeds on **all** k attempts at a task, i.e. reliability rather than average success |
 
-New to the topic? Start with the [glossary](docs/glossary.md) and the explainers on [reliability](docs/concepts/reliability.md), [contamination](docs/concepts/contamination.md) and [multiple-choice scoring](docs/concepts/multiple-choice-scoring.md).
+New to the topic? Start with the [glossary](docs/glossary.md) and the explainers on [reliability](docs/concepts/reliability.md), [robustness](docs/concepts/robustness.md), [contamination](docs/concepts/contamination.md) and [multiple-choice scoring](docs/concepts/multiple-choice-scoring.md).
 
 ## What makes this different
 

@@ -96,7 +96,7 @@ Evidence levels: **[documented]** published analysis · **[reported]** credible 
 ### Construct validity
 
 - **[documented] It measures the whole setup's variability, not only the model's.** In τ-bench, the customer is another AI model whose behavior varies between runs, and which can be weak at reasoning or at following its brief [1]. Some inconsistency is the simulator's, not the agent's.
-- **[suspected] Repeating the identical task isn't real-world variation.** Real requests vary in wording and details. Robustness to rewording is a separate measure (see [reliability](../concepts/reliability.md#does-it-hold-up-when-the-question-changes-slightly-robustness)), and pass^k doesn't capture it.
+- **[suspected] Repeating the identical task isn't real-world variation.** Real requests vary in wording and details. Robustness to rewording is a separate measure (see [robustness](../concepts/robustness.md), where *worst-case accuracy* plays the role pass^k plays for repetition), and pass^k doesn't capture it.
 
 ### Label and metric flaws
 
