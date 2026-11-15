@@ -1,6 +1,6 @@
 # GPQA Diamond (Graduate-Level Google-Proof Q&A)
 
-_Last updated: 2026-11-11 · Area: Knowledge & reasoning_
+_Last updated: 2026-11-14 · Area: Knowledge & reasoning_
 
 > **In one sentence:** GPQA Diamond is 198 very hard multiple-choice questions in biology, physics and chemistry, written by PhD-level experts. It is designed so that skilled people *outside* the field can't answer the questions even with unlimited web search, and in 2025–2026 it became the headline "expert knowledge" benchmark that replaced MMLU.
 
@@ -12,7 +12,7 @@ _Last updated: 2026-11-11 · Area: Knowledge & reasoning_
 | **Metric** | Accuracy (% correct). Each question is worth about 0.5 points. |
 | **Random guessing** | 25% |
 | **Human baseline** | PhD experts answering in their own field: ~65%, or 74% after discounting clear slips. Skilled non-experts with web search: ~34% (both measured on all GPQA questions) [1] |
-| **Top scores (as of 2026-11-11)** | 96.5% in Epoch AI's independent runs (Gemini 4 Carbon, Oct 2026) [6]; 83.4% in the newest score we checked by hand (o3, high effort, Apr 2025) [5]; 96.0% self-reported (GPT-6 Astra) [7] |
+| **Top scores (as of 2026-11-14)** | 96.5% in Epoch AI's independent runs (Gemini 4 Carbon, Nov 2026) [6]; 83.4% in the newest score we checked by hand (o3, high effort, Apr 2025) [5]; 96.0% self-reported (GPT-6 Astra) [7] |
 | **Status** | **Near saturation.** Top independent scores sit above Epoch's estimated ceiling of about 92% (see below). |
 
 ---
@@ -61,13 +61,13 @@ Things that change the number:
 
 ## History and scores
 
-![Scatter chart of GPQA Diamond scores by model release date, 2023 to late 2026. Scores rise from 38.8% for GPT-4 in the original 2023 paper, past the roughly 65% expert line with o1-preview in late 2024, to about 92% by late 2025. Epoch AI's independent runs then reach 96.5% (Gemini 4 Carbon, October 2026), above the shaded band that starts at about 92%, where questions are estimated to be invalid. Colors show the data source: primary reports, and Epoch AI's independent runs; self-reported scores are hollow gray rings, which mostly sit close to the independent runs.](../../img/gpqa_diamond-history-light.svg)
+![Scatter chart of GPQA Diamond scores by model release date, 2023 to late 2026. Scores rise from 38.8% for GPT-4 in the original 2023 paper, past the roughly 65% expert line with o1-preview in late 2024, to about 92% by late 2025. Epoch AI's independent runs then reach 96.5% (Gemini 4 Carbon, November 2026), above the shaded band that starts at about 92%, where questions are estimated to be invalid. Colors show the data source: primary reports, and Epoch AI's independent runs; self-reported scores are hollow gray rings, which mostly sit close to the independent runs.](../../img/gpqa_diamond-history-light.svg)
 
 _Dark-theme version: [gpqa_diamond-history-dark.svg](../../img/gpqa_diamond-history-dark.svg)_
 
 **How to read this chart.** Each point is one reported score. **Color shows what kind of source the number came from**:
 - **Primary** (blue): checked by hand against the original paper or OpenAI's evaluation repo [1][5]. Claude and Llama scores in that repo are listed as the vendors reported them.
-- **Independent: Epoch AI** (green): Epoch ran every model through the *same* evaluation setup [6]. When Epoch tested several reasoning settings for a model, we show its best one, which is how labs report too. This is the main source here, with 235 models up to November 2026.
+- **Independent: Epoch AI** (green): Epoch ran every model through the *same* evaluation setup [6]. When Epoch tested several reasoning settings for a model, we show its best one, which is how labs report too. We leave out Epoch's "-fallback" runs (three Claude models, added November 2026): Epoch doesn't say what "fallback" means, and they score 2–8 points above the same models' regular runs. This is the main source here, with 235 models up to November 2026.
 - **Unverified** (hollow gray): self-reported scores listed on llm-stats, which we haven't checked against the labs' own reports [7]. They are dated by Epoch's release date for the same model.
 
 There is no "Compiled" source for this benchmark. Epoch runs GPQA Diamond itself instead of collecting other people's reported scores.
@@ -90,7 +90,7 @@ Data: [`data/gpqa_diamond/scores.csv`](../../../data/gpqa_diamond/scores.csv), w
 | Apr 2025 | o3 (high effort) reaches **83.4%**. [5] |
 | May 2025 | Epoch AI reviews the questions models still miss and estimates about **8%** of Diamond is invalid. [4] |
 | Nov 2025 | Gemini 3 Pro scores **92.6%** in Epoch's runs, at the estimated ceiling. [6] |
-| 2026 | Independent scores reach **96.5%** (Gemini 4 Carbon, Oct 2026). [6] |
+| 2026 | Independent scores reach **96.5%** (Gemini 4 Carbon, Nov 2026). [6] |
 
 ## Known issues
 
@@ -146,5 +146,5 @@ Evidence levels: **[documented]** published analysis · **[reported]** credible 
 3. Rein, D. (2024-05-15). Blog post on GPQA question validity, NYU Alignment Research Group. https://wp.nyu.edu/arg/?p=139
 4. Burnham, G. (2025-05-30). *GPQA Diamond: What's left?* Epoch AI, Gradient Updates. https://epoch.ai/gradient-updates/gpqa-diamond-whats-left
 5. OpenAI, *simple-evals* (GPQA scores; README notes an answer-regex tweak for GPQA; o3/o4-mini run without tools). https://github.com/openai/simple-evals
-6. Epoch AI, Benchmarking Hub, GPQA Diamond, Epoch's own runs with standard errors (CC-BY; downloaded 2026-11-11). https://epoch.ai/benchmarks/gpqa-diamond
+6. Epoch AI, Benchmarking Hub, GPQA Diamond, Epoch's own runs with standard errors (CC-BY; downloaded 2026-11-14). https://epoch.ai/benchmarks/gpqa-diamond
 7. llm-stats, GPQA leaderboard (262 of 265 results self-reported; accessed 2026-11-11). Not independently verified. https://llm-stats.com/benchmarks/gpqa

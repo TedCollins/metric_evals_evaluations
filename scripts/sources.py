@@ -142,13 +142,17 @@ def load_helm(project: str, release: str, group: str, setup_detail: str,
     return rows
 
 
-def load_epoch_runs(csv_name: str, page_url: str, best_per_model: bool = True) -> list[dict]:
+def load_epoch_runs(csv_name: str, page_url: str, best_per_model: bool = True,
+                    exclude_version_substrings: tuple[str, ...] = ()) -> list[dict]:
     """Epoch AI's own benchmark runs (e.g. 'gpqa_diamond.csv').
 
     Epoch often runs one model at several settings (reasoning effort, token
     budget), encoded as a suffix after the last "_" in the model version.
     With best_per_model, keep only each model's best setting - matching how
     labs usually report a single headline number.
+
+    exclude_version_substrings drops model versions containing any of the
+    given strings (e.g. undocumented run variants).
     """
     text = _epoch_zip().read(csv_name).decode("utf-8")
     rows = []
@@ -156,6 +160,8 @@ def load_epoch_runs(csv_name: str, page_url: str, best_per_model: bool = True) -
         if not r["Release date"] or not r["mean_score"]:
             continue
         version = r["Model version"]
+        if any(s in version for s in exclude_version_substrings):
+            continue
         base, _, setting = version.rpartition("_") if "_" in version else (version, "", "")
         stderr = r.get("stderr") or ""
         rows.append({

@@ -10,7 +10,7 @@ When a lab announces "92% on GPQA" or "state of the art on Humanity's Last Exam"
 |-----------|--------------------------|--------|------------------------|--------------------|
 | [MMLU](docs/benchmarks/knowledge-reasoning/mmlu.md) | Exam-style multiple choice across 57 subjects | Saturated | 87.3% (Stanford HELM, Oct 2024) | ~93.5% |
 | [GSM8K](docs/benchmarks/knowledge-reasoning/gsm8k.md) | Grade-school math word problems | Saturated | 95.6% (Stanford HELM, Oct 2024) | ~96.6% |
-| [GPQA Diamond](docs/benchmarks/knowledge-reasoning/gpqa-diamond.md) | PhD-level science questions you can't simply look up | Near saturation | 96.5% (Epoch AI, Oct 2026) | ~92% |
+| [GPQA Diamond](docs/benchmarks/knowledge-reasoning/gpqa-diamond.md) | PhD-level science questions you can't simply look up | Near saturation | 96.5% (Epoch AI, Nov 2026) | ~92% |
 | [Humanity's Last Exam](docs/benchmarks/knowledge-reasoning/hle.md) | Expert questions chosen because 2024's AI models failed them | **Not saturated** | 54.8% (official evaluation, Sep 2026) | ~75% |
 | [τ-bench](docs/benchmarks/agents/tau-bench.md) (airline) | AI agents doing customer service with tools and policies | Superseded | 56% (Princeton HAL, 2025) | n/a: only 26 of 50 tasks pass quality review |
 

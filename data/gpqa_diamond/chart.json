@@ -3,7 +3,7 @@
   "y_label": "GPQA Diamond accuracy (%)",
   "y_range": [0, 100],
   "x_start": "2023-01-01",
-  "as_of": "2026-11-11",
+  "as_of": "2026-11-14",
   "source_labels": {
     "Independent": "Independent: Epoch AI ran every model the same way (best setting)"
   },
